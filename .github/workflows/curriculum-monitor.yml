@@ -21,14 +21,90 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Run official source monitor
-        run: python check_official_sources.py
+      - name: Check official sources
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from datetime import datetime, timezone
+          from urllib.request import Request, urlopen
+          from urllib.error import URLError, HTTPError
 
-      - name: Save monitoring reports
+          sources = {
+              "CBSE Curriculum": "https://cbseacademic.nic.in/curriculum_2027.html",
+              "CBSE Circulars": "https://cbseacademic.nic.in/circulars.html",
+              "NCERT Textbooks": "https://ncert.nic.in/textbook.php",
+          }
+
+          os.makedirs("research_reports", exist_ok=True)
+          try:
+              with open("research_state.json", encoding="utf-8") as f:
+                  old = json.load(f)
+          except (OSError, json.JSONDecodeError):
+              old = {}
+
+          new = {}
+          lines = [
+              "# ExamSkeeda official-source check",
+              "",
+              "Time: " + datetime.now(timezone.utc).isoformat(),
+              "",
+              "A page change is a review signal, not proof of a syllabus change.",
+              ""
+          ]
+
+          for name, url in sources.items():
+              try:
+                  request = Request(
+                      url,
+                      headers={"User-Agent": "ExamSkeeda-Curriculum-Monitor/1.0"}
+                  )
+                  with urlopen(request, timeout=30) as response:
+                      body = response.read()
+                      status = response.status
+                  digest = hashlib.sha256(body).hexdigest()
+                  changed = old.get(name, {}).get("sha256") not in (None, digest)
+                  new[name] = {
+                      "url": url,
+                      "status": status,
+                      "sha256": digest,
+                      "checked_at": datetime.now(timezone.utc).isoformat()
+                  }
+                  result = "CHANGED — review the official page" if changed else "Fetched successfully"
+                  lines.extend([
+                      f"## {name}",
+                      f"- URL: {url}",
+                      f"- HTTP status: {status}",
+                      f"- Result: {result}",
+                      ""
+                  ])
+              except (URLError, HTTPError, TimeoutError, OSError) as exc:
+                  lines.extend([
+                      f"## {name}",
+                      f"- URL: {url}",
+                      f"- Result: CHECK FAILED — {type(exc).__name__}: {exc}",
+                      ""
+                  ])
+
+          with open("research_state.json", "w", encoding="utf-8") as f:
+              json.dump(new, f, indent=2, ensure_ascii=False)
+
+          stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
+          with open(f"research_reports/check-{stamp}.md", "w", encoding="utf-8") as f:
+              f.write("\n".join(lines))
+
+          print("\n".join(lines))
+          PY
+
+      - name: Save report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add research_state.json research_reports
-          git diff --cached --quiet || git commit -m "Update curriculum monitoring report"
-          git push
-          
+          if ! git diff --cached --quiet; then
+            git commit -m "Update official curriculum source report"
+            git push
+          else
+            echo "No report changes to commit."
+          fi
