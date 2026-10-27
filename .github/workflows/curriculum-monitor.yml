@@ -1,0 +1,34 @@
+
+name: ExamSkeeda Official Curriculum Monitor
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run official source monitor
+        run: python check_official_sources.py
+
+      - name: Save monitoring reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_state.json research_reports
+          git diff --cached --quiet || git commit -m "Update curriculum monitoring report"
+          git push
+          
