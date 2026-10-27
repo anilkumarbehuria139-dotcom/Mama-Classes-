@@ -1,195 +1,227 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ExamSkeeda | Classes 6–12</title>
-<meta name="description" content="Explore class-wise NCERT study resources, notes, questions and revision materials for Classes 6 to 12.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExamSkeeda | NCERT Classes 6–12</title>
 <style>
-:root{--navy:#102754;--blue:#1769e8;--cyan:#08a8c7;--ink:#17233e;--muted:#64718a;--bg:#f3f6fc;--line:#e2e9f4}
+:root{--blue:#0878ed;--navy:#102c61;--ink:#17264c;--bg:#f4f8ff;--line:#dce7f5}
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
-header{background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
-nav{max-width:1150px;margin:auto;padding:14px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.brand{font-size:22px;font-weight:900;color:var(--navy);text-decoration:none}
-.brand span{color:var(--blue)}
-.navlinks{margin-left:auto;display:flex;gap:15px;flex-wrap:wrap}
-.navlinks a{color:var(--ink);text-decoration:none;font-size:14px;font-weight:650}
-.wrap{max-width:1150px;margin:auto;padding:20px 16px 45px}
-.hero{padding:30px;border-radius:22px;color:white;background:linear-gradient(120deg,#102754,#1769e8 65%,#08a8c7);box-shadow:0 10px 28px #1769e825}
-.hero h1{font-size:clamp(27px,5vw,43px);margin:0 0 10px;line-height:1.15}
-.hero p{max-width:650px;line-height:1.6;margin:0 0 18px;color:#e7efff}
-.searchrow{display:flex;gap:9px;flex-wrap:wrap}
-input,select,button{font:inherit;border-radius:10px;padding:12px;border:1px solid var(--line)}
-input{flex:1;min-width:180px;background:white}
-button{cursor:pointer;background:var(--blue);color:white;border:0;font-weight:750}
-button:hover{filter:brightness(.95)}
-.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:26px 0 13px}
-h2{font-size:22px;margin:0}
-.muted{color:var(--muted);font-size:13px}
-.classes{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
-.classbtn{background:white;color:var(--ink);border:1px solid var(--line);padding:17px 5px;border-radius:13px}
-.classbtn strong{display:block;font-size:21px;color:var(--blue)}
-.classbtn.active{background:var(--navy);color:white;border-color:var(--navy)}
-.classbtn.active strong{color:white}
-.panel{background:white;border:1px solid var(--line);border-radius:17px;padding:19px;margin-top:16px}
-.subjects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
-.subject{border:1px solid var(--line);border-radius:13px;padding:15px;background:#fff;text-align:left;color:var(--ink)}
-.subject strong{display:block;font-size:16px;margin-bottom:5px}
-.subject span{font-size:12px;color:var(--muted)}
-.subject.active{border:2px solid var(--blue);background:#f1f6ff}
-.resources{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
-.resource{border:1px solid var(--line);border-radius:12px;padding:15px;background:#fbfcff}
-.resource h3{font-size:15px;margin:0 0 8px}
-.resource p{font-size:13px;line-height:1.5;color:var(--muted)}
-.resource a{color:var(--blue);font-weight:700;font-size:13px}
-.chapterlist{display:grid;gap:9px;margin-top:12px}
-.chapter{padding:13px;border:1px solid var(--line);border-radius:10px;background:#fff}
-.chapter summary{font-weight:700;cursor:pointer}
-.chapter p{line-height:1.65;font-size:14px}
-footer{text-align:center;color:var(--muted);padding:22px;font-size:13px}
-.hidden{display:none!important}
-@media(max-width:700px){.classes{grid-template-columns:repeat(4,1fr)}.subjects,.resources{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:23px}.navlinks{width:100%;margin:0}}
-@media(max-width:420px){.subjects,.resources{grid-template-columns:1fr}.wrap{padding:13px 10px 30px}}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:white}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.top{padding:12px 3.3%;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.logo{font-size:29px;font-weight:900;color:#1266bc;white-space:nowrap}
+.logo span{color:#f28b18}
+.tag{font-size:12px;color:#47536c;margin-top:3px}
+.search{display:flex;flex:1;min-width:210px}
+.search input{width:100%;padding:13px;border:1px solid #d7dfec;border-radius:9px 0 0 9px}
+.search button{border:0;background:var(--blue);color:white;padding:0 19px;border-radius:0 9px 9px 0}
+.top select{padding:10px;border:1px solid var(--line);border-radius:8px}
+.nav{background:#10336b;color:white;padding:14px 3.3%;display:flex;gap:24px;flex-wrap:wrap}
+.nav a{color:white;text-decoration:none;font-size:14px;font-weight:bold}
+main{padding:0 3.3% 30px}
+.hero{margin-top:0;padding:28px 24px;color:white;background:linear-gradient(110deg,#2739a1,#087fe0 60%,#11b7ce);border-radius:0 0 4px 4px}
+.hero h1{font-size:clamp(25px,3.5vw,39px);margin:0 0 10px}
+.hero h2{font-size:clamp(17px,2.4vw,25px);font-weight:500;margin:0 0 23px}
+.features{display:flex;gap:28px;flex-wrap:wrap}
+.feature{display:flex;align-items:center;gap:12px;font-weight:bold;line-height:1.5}
+.bubble{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#ff941b;font-size:23px}
+.feature:nth-child(2) .bubble{background:#25b96a}
+.feature:nth-child(3) .bubble{background:#743ee5}
+.classbar{margin-top:15px;padding:14px;background:#f0f6ff;border-radius:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.classintro{flex:1;min-width:170px}
+.classintro h3{margin:0 0 6px}
+.classintro p{margin:0;color:#65718a;font-size:13px;line-height:1.4}
+.classbtn{flex:1;min-width:75px;padding:16px 5px;color:white;border:0;border-radius:9px;font-weight:bold;background:#087bea}
+.classbtn:nth-of-type(2){background:#319b60}
+.classbtn:nth-of-type(3){background:#f38a22}
+.classbtn:nth-of-type(4){background:#f04452}
+.classbtn:nth-of-type(5){background:#9951d2}
+.classbtn:nth-of-type(6){background:#0aafc0}
+.classbtn:nth-of-type(7){background:#3c50bb}
+.classbtn.active{outline:3px solid #172b57;outline-offset:2px}
+.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:21px 0 12px}
+.sectionhead h3{margin:0;font-size:18px}
+.view{background:#0878ed;color:white;border:0;border-radius:8px;padding:10px 14px;font-size:13px}
+.subjects{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px}
+.subject{background:#f7fbff;border:1px solid #dfe9f4;border-radius:10px;padding:12px 7px;text-align:center;min-width:0}
+.subject .emoji{width:52px;height:52px;border-radius:50%;background:#d9ecff;display:grid;place-items:center;margin:0 auto 8px;font-size:26px}
+.subject h4{font-size:14px;margin:5px 0}
+.subject p{font-size:13px;color:#53617c;margin:5px 0 10px}
+.subject button{width:100%;background:white;border:1px solid #2182ee;color:#0865cb;padding:8px 3px;border-radius:8px;font-size:12px}
+.workspace{display:grid;grid-template-columns:minmax(220px,0.85fr) minmax(0,2.7fr);gap:14px;margin-top:15px}
+.panel{border:1px solid #dbe6f4;border-radius:12px;overflow:hidden;min-width:0}
+.panelhead{padding:13px;background:#edf5ff;border-bottom:1px solid #dbe6f4;font-weight:bold}
+.chapters{padding:7px}
+.chapters button{width:100%;text-align:left;background:white;border:0;border-bottom:1px solid #edf0f5;padding:11px 7px;color:#45526e;font-size:13px;line-height:1.4}
+.chapters button.active{background:#e4f0ff;color:#0569dc;font-weight:bold}
+.content{padding:15px}
+.crumb{font-size:12px;color:#62728e;margin-bottom:16px}
+.content h2{font-size:22px;margin:0 0 6px}
+.desc{font-size:14px;color:#63718a;line-height:1.5;margin:0 0 14px}
+.chaptertop{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.official{background:#effbf4;border:1px solid #80c89b;color:#187445;border-radius:8px;padding:11px;font-size:12px;text-decoration:none;font-weight:bold}
+.tabs{display:flex;overflow-x:auto;border-bottom:1px solid #dbe6f4}
+.tab{flex:1;min-width:90px;border:0;padding:13px 8px;background:white;color:#34415c;font-size:12px;font-weight:bold}
+.tab.active{background:#0878ed;color:white;border-radius:7px 7px 0 0}
+.resources{padding:7px 0}
+.resource{display:flex;align-items:center;gap:12px;padding:12px 8px;border-bottom:1px solid #edf0f5}
+.fileicon{width:34px;height:38px;flex-shrink:0;border-radius:6px;background:#f04452;color:white;display:grid;place-items:center;font-size:12px;font-weight:bold}
+.resource:nth-child(2) .fileicon{background:#1886db}
+.resource:nth-child(3) .fileicon{background:#854be8}
+.resource:nth-child(4) .fileicon{background:#24a46a}
+.rinfo{flex:1;min-width:0}
+.rinfo strong{font-size:14px}
+.rinfo p{margin:4px 0 0;color:#758097;font-size:12px}
+.actions{display:flex;gap:7px;flex-wrap:wrap}
+.preview,.download{padding:9px 11px;border-radius:7px;font-size:12px;font-weight:bold}
+.preview{background:white;border:1px solid #efa92e;color:#b97a05}
+.download{background:#129d59;color:white;border:0}
+footer{text-align:center;padding:22px;color:#6a7790;font-size:13px}
+#notice{background:#eef5ff;padding:12px;border-radius:8px;font-size:13px;line-height:1.5;margin-top:12px}
+@media(max-width:950px){.subjects{grid-template-columns:repeat(4,minmax(0,1fr))}.top{gap:12px}.workspace{grid-template-columns:1fr}.chapters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.top{padding:12px}.logo{font-size:24px}.nav{gap:14px;padding:13px 12px}.nav a{font-size:12px}.hero{padding:22px 16px}.features{gap:14px}.feature{font-size:12px}.bubble{width:39px;height:39px}.classbtn{min-width:65px;padding:13px 4px;font-size:12px}.subjects{grid-template-columns:repeat(2,minmax(0,1fr))}main{padding:0 10px 24px}.workspace{grid-template-columns:minmax(0,1fr)}.chapters{grid-template-columns:1fr}.content{padding:11px}.resource{gap:8px}.actions{width:100%;padding-left:42px}.preview,.download{flex:1}.sectionhead h3{font-size:16px}}
 </style>
 </head>
 <body>
-<header>
-<nav>
-<a class="brand" href="#">📘 Exam<span>Skeeda</span></a>
-<div class="navlinks">
-<a href="#classes">Classes</a>
-<a href="#subjects">Subjects</a>
-<a href="#resources">Study resources</a>
-<a href="#about">About</a>
-</div>
-</nav>
+<header class="top">
+<div><div class="logo">🎓 Exam<span>Skeeda</span></div><div class="tag">Learn | Practice | Score Higher</div></div>
+<div class="search"><input id="search" placeholder="Search chapters, topics, notes, questions..."><button onclick="searchSite()">🔍</button></div>
+<select id="language" aria-label="Language"><option>English</option><option>Hindi</option><option>Odia</option></select>
 </header>
-
-<main class="wrap">
+<nav class="nav">
+<a href="#">⌂ Home</a><a href="#classes">▣ Classes</a><a href="#subjects">▤ Subjects</a><a href="#resources">📚 Study Materials</a><a href="#resources">◉ Mock Tests</a><a href="#resources">▦ Previous Years</a><a href="#resources">▣ Free Resources</a><a href="#resources">🛒 Shop</a><a href="#about">ⓘ About</a>
+</nav>
+<main>
 <section class="hero">
-<h1>Learn Better. Score Higher.</h1>
-<p>Your learning companion for Classes 6–12. Explore subjects, chapter summaries, revision notes and practice questions in one place.</p>
-<div class="searchrow">
-<input id="search" type="search" placeholder="Search a subject or chapter…" aria-label="Search study resources">
-<select id="language" aria-label="Choose language">
-<option value="English">English</option>
-<option value="Hindi">हिन्दी</option>
-<option value="Odia">ଓଡ଼ିଆ</option>
-</select>
-<button onclick="searchResources()">Search</button>
+<h1>Complete NCERT Learning for Classes 6–12</h1>
+<h2>Chapter-wise Notes, Questions, Worksheets, Mock Tests & More</h2>
+<div class="features">
+<div class="feature"><span class="bubble">▤</span><span>NCERT Aligned<br>Class 6–12</span></div>
+<div class="feature"><span class="bubble">✓</span><span>Chapter-wise Content<br>All Subjects</span></div>
+<div class="feature"><span class="bubble">↗</span><span>Practice & Mock Tests<br>Score Higher</span></div>
 </div>
 </section>
 
-<section id="classes">
-<div class="sectionhead">
-<h2>🎓 Choose Your Class</h2>
-<span class="muted">CBSE / NCERT learning</span>
-</div>
-<div class="classes" id="classButtons"></div>
+<section id="classes" class="classbar">
+<div class="classintro"><h3>🏫 Select Your Class</h3><p>Choose your class to explore all subjects chapter-wise</p></div>
+<div id="classButtons" style="display:contents"></div>
 </section>
 
-<section class="panel" id="subjects">
-<div class="sectionhead">
-<div><h2 id="classHeading">Class 6 Subjects</h2><p class="muted">Choose a subject to explore learning resources.</p></div>
-</div>
+<section id="subjects">
+<div class="sectionhead"><h3>📘 Explore Subjects (<span id="classLabel">Class 6</span>)</h3><button class="view" onclick="showNotice('Browse the subject cards below and choose Explore Chapters.')">View All Subjects →</button></div>
 <div class="subjects" id="subjectCards"></div>
 </section>
 
-<section class="panel" id="resources">
-<div class="sectionhead">
-<div><h2 id="resourceHeading">📚 Study Resources</h2><p class="muted">Start with a resource type or explore sample chapter guides.</p></div>
+<section class="workspace" id="resources">
+<aside class="panel">
+<div class="panelhead" id="sideTitle">▦ Class 6 - Mathematics</div>
+<div class="chapters" id="chapterList"></div>
+</aside>
+<section class="panel">
+<div class="content">
+<div class="crumb" id="crumb">Class 6 › Mathematics › Chapter 1</div>
+<div class="chaptertop"><div><h2 id="chapterTitle">Chapter 1: Knowing Our Numbers</h2><p class="desc" id="chapterDesc">Explore number systems, place value and real-life applications.</p></div><a class="official" href="https://ncert.nic.in/textbook.php" target="_blank" rel="noopener">📗 View NCERT Chapter</a></div>
+<div class="tabs" id="tabs"></div>
+<div class="resources" id="resourceList"></div>
+<div id="notice" class="hidden"></div>
 </div>
-<div class="resources">
-<article class="resource"><h3>📝 Chapter Notes</h3><p>Concise explanations, key terms and revision points.</p><a href="#chapters" onclick="showChapters('notes')">Explore notes ↓</a></article>
-<article class="resource"><h3>❓ Practice Questions</h3><p>Practice recall and test your understanding.</p><a href="#chapters" onclick="showChapters('questions')">Explore questions ↓</a></article>
-<article class="resource"><h3>📖 Revision Guide</h3><p>Review key concepts before tests and examinations.</p><a href="#chapters" onclick="showChapters('revision')">Explore revision ↓</a></article>
-</div>
-<div id="chapters" class="chapterlist"></div>
+</section>
 </section>
 
-<section class="panel" id="about">
-<h2>About ExamSkeeda</h2>
-<p class="muted" style="line-height:1.7">ExamSkeeda is designed to organise learning materials by class, subject and chapter. Use official CBSE and NCERT resources to verify the latest syllabus and textbook content. Sample guides on this page are demonstrations, not a complete syllabus.</p>
-<p><a href="https://cbseacademic.nic.in/curriculum_2027.html">CBSE curriculum 2026–27</a> · <a href="https://ncert.nic.in/textbook.php">Official NCERT textbooks</a></p>
-</section>
+<section id="about" class="sectionhead"><h3>About ExamSkeeda</h3></section>
+<p style="font-size:13px;color:#66738b;line-height:1.7">Organised study resources for Classes 6–12. Verify syllabus details with official CBSE and NCERT materials. Resource previews shown here are examples until original lesson content is added.</p>
 </main>
-<footer>© ExamSkeeda · Learn • Practise • Improve</footer>
+<footer>© ExamSkeeda · Learn · Practice · Score Higher<br><a href="https://cbseacademic.nic.in/curriculum_2027.html">CBSE curriculum</a> · <a href="https://ncert.nic.in/textbook.php">Official NCERT textbooks</a></footer>
 
 <script>
-const subjectsByClass={
-6:["Mathematics","Science","English","Hindi","Social Science","Sanskrit","Computer Science"],
-7:["Mathematics","Science","English","Hindi","Social Science","Sanskrit","Computer Science"],
-8:["Mathematics","Science","English","Hindi","Social Science","Sanskrit","Computer Science"],
-9:["Mathematics","Science","English","Hindi","Social Science","Information Technology"],
-10:["Mathematics","Science","English","Hindi","Social Science","Information Technology"],
-11:["Mathematics","Physics","Chemistry","Biology","English","Accountancy","Business Studies","Economics","History","Political Science","Geography","Painting","Computer Science"],
-12:["Mathematics","Physics","Chemistry","Biology","English","Accountancy","Business Studies","Economics","History","Political Science","Geography","Painting","Computer Science"]
+const subjects={
+6:[["Mathematics","🧮",14],["Science","⚗️",16],["English","📖",12],["Hindi","अ",15],["Odia","ଓ",12],["Social Science","🌐",20],["Computer Science","▣",10]],
+7:[["Mathematics","🧮",13],["Science","⚗️",18],["English","📖",12],["Hindi","अ",15],["Odia","ଓ",12],["Social Science","🌐",20],["Computer Science","▣",10]],
+8:[["Mathematics","🧮",16],["Science","⚗️",18],["English","📖",12],["Hindi","अ",15],["Odia","ଓ",12],["Social Science","🌐",20],["Computer Science","▣",10]],
+9:[["Mathematics","🧮",15],["Science","⚗️",15],["English","📖",12],["Hindi","अ",14],["Odia","ଓ",12],["Social Science","🌐",20],["Computer Science","▣",10]],
+10:[["Mathematics","🧮",15],["Science","⚗️",15],["English","📖",12],["Hindi","अ",14],["Odia","ଓ",12],["Social Science","🌐",20],["Computer Science","▣",10]],
+11:[["Mathematics","🧮",16],["Physics","⚛️",14],["Chemistry","⚗️",14],["Biology","🧬",22],["English","📖",12],["Economics","📈",10],["Computer Science","▣",10]],
+12:[["Mathematics","🧮",13],["Physics","⚛️",14],["Chemistry","⚗️",16],["Biology","🧬",16],["English","📖",12],["Economics","📈",10],["Computer Science","▣",10]]
 };
-const examples={
-Mathematics:["Number Systems","Fractions and Decimals","Algebra","Geometry"],
-Science:["Living World","Materials Around Us","Force and Motion","Environment"],
-English:["Reading Comprehension","Grammar","Writing Skills","Literature"],
-Hindi:["पठन और बोध","व्याकरण","लेखन","साहित्य"],
-"Social Science":["History","Geography","Civics","Economics"],
-Physics:["Units and Measurements","Motion","Laws of Motion","Work and Energy"],
-Chemistry:["Matter and Its Nature","Atoms and Molecules","Chemical Reactions"],
-Biology:["Living Organisms","Cell Structure","Life Processes"],
-Computer Science:["Computer Fundamentals","Programming","Data and Networks"]
+const mathChapters={
+6:["Knowing Our Numbers","Whole Numbers","Playing with Numbers","Basic Geometrical Ideas","Understanding Elementary Shapes","Integers","Fractions","Decimals","Data Handling"],
+7:["Integers","Fractions and Decimals","Data Handling","Simple Equations","Lines and Angles","The Triangle and Its Properties","Comparing Quantities","Rational Numbers"],
+8:["Rational Numbers","Linear Equations in One Variable","Understanding Quadrilaterals","Data Handling","Squares and Square Roots","Cubes and Cube Roots","Comparing Quantities","Algebraic Expressions"],
+9:["Number Systems","Polynomials","Coordinate Geometry","Linear Equations in Two Variables","Introduction to Euclid's Geometry","Lines and Angles","Triangles","Quadrilaterals"],
+10:["Real Numbers","Polynomials","Pair of Linear Equations","Quadratic Equations","Arithmetic Progressions","Triangles","Coordinate Geometry","Trigonometry"],
+11:["Sets","Relations and Functions","Trigonometric Functions","Complex Numbers","Linear Inequalities","Permutations and Combinations","Binomial Theorem","Sequences and Series"],
+12:["Relations and Functions","Inverse Trigonometric Functions","Matrices","Determinants","Continuity and Differentiability","Applications of Derivatives","Integrals","Probability"]
 };
-let currentClass=6,currentSubject="Mathematics",currentMode="notes";
+let cls=6,subject="Mathematics",chapter=0,tab="All Resources";
 const $=id=>document.getElementById(id);
-function buildClasses(){
- $("classButtons").innerHTML="";
- for(let c=6;c<=12;c++){
-  const b=document.createElement("button");
-  b.className="classbtn"+(c===currentClass?" active":"");
-  b.innerHTML="<strong>"+c+"</strong>Class";
-  b.onclick=()=>{currentClass=c;buildClasses();buildSubjects();renderChapters()};
-  $("classButtons").appendChild(b);
- }
+function renderClasses(){
+$("classButtons").innerHTML="";
+for(let n=6;n<=12;n++){
+let b=document.createElement("button");b.className="classbtn"+(n===cls?" active":"");b.textContent="♙ Class "+n;b.onclick=()=>{cls=n;chapter=0;renderAll()};$("classButtons").appendChild(b)}
 }
-function buildSubjects(){
- $("classHeading").textContent="Class "+currentClass+" Subjects";
- $("subjectCards").innerHTML="";
- (subjectsByClass[currentClass]||[]).forEach(s=>{
-  const b=document.createElement("button");
-  b.className="subject"+(s===currentSubject?" active":"");
-  b.innerHTML="<strong>"+s+"</strong><span>Notes · Questions · Revision</span>";
-  b.onclick=()=>{currentSubject=s;buildSubjects();renderChapters()};
-  $("subjectCards").appendChild(b);
- });
- if(!(subjectsByClass[currentClass]||[]).includes(currentSubject))currentSubject=subjectsByClass[currentClass][0];
- $("resourceHeading").textContent="📚 Class "+currentClass+" · "+currentSubject;
+function renderSubjects(){
+$("classLabel").textContent="Class "+cls;
+$("subjectCards").innerHTML="";
+subjects[cls].forEach(s=>{
+let d=document.createElement("div");d.className="subject";
+d.innerHTML='<div class="emoji">'+s[1]+'</div><h4>'+s[0]+'</h4><p>'+s[2]+' Chapters</p><button>Explore Chapters →</button>';
+d.querySelector("button").onclick=()=>{subject=s[0];chapter=0;renderAll();$("resources").scrollIntoView({behavior:"smooth"})};
+$("subjectCards").appendChild(d)});
 }
-function showChapters(mode){currentMode=mode;renderChapters()}
+function chapterNames(){
+if(subject==="Mathematics")return mathChapters[cls];
+return ["Introduction","Key Concepts","Important Terms","Examples and Applications","Practice Questions","Revision"];
+}
 function renderChapters(){
- const list=examples[currentSubject]||["Introduction","Key Concepts","Important Questions","Revision"];
- $("chapters").innerHTML="<h3>"+(currentMode==="questions"?"Practice questions":currentMode==="revision"?"Revision guide":"Sample chapter guides")+"</h3>";
- list.forEach((chapter,i)=>{
-  const d=document.createElement("details");d.className="chapter";
-  const summary=document.createElement("summary");summary.textContent=(i+1)+". "+chapter;
-  const p=document.createElement("p");
-  p.textContent=currentMode==="questions"
-   ?"Practice prompt: Explain the main ideas in "+chapter+" and write two examples. Check your answer against your class notes."
-   :currentMode==="revision"
-   ?"Revision task: Write the key terms, definitions and three important points from "+chapter+". Verify them with your textbook."
-   :"Use this section to organise the definitions, key concepts, examples and summary for "+chapter+". Add notes from your prescribed textbook.";
-  d.append(summary,p);$("chapters").appendChild(d);
- });
+const names=chapterNames();chapter=Math.min(chapter,names.length-1);
+$("sideTitle").textContent="▦ Class "+cls+" - "+subject;
+$("chapterList").innerHTML="";
+names.forEach((name,i)=>{
+let b=document.createElement("button");b.className=i===chapter?"active":"";
+b.textContent="›  Ch "+(i+1)+" - "+name;
+b.onclick=()=>{chapter=i;renderChapters();renderResources()};
+$("chapterList").appendChild(b)});
+$("crumb").textContent="Class "+cls+"  ›  "+subject+"  ›  Chapter "+(chapter+1);
+$("chapterTitle").textContent="Chapter "+(chapter+1)+": "+names[chapter];
+$("chapterDesc").textContent="Study key concepts, examples, important questions and real-life applications.";
 }
-function searchResources(){
- const q=$("search").value.trim().toLowerCase();
- if(!q){$("subjects").scrollIntoView({behavior:"smooth"});return}
- const found=(subjectsByClass[currentClass]||[]).find(s=>s.toLowerCase().includes(q))||
- (examples[currentSubject]||[]).find(s=>s.toLowerCase().includes(q));
- if(found && (subjectsByClass[currentClass]||[]).includes(found)){currentSubject=found;buildSubjects();renderChapters()}
- else if(found){renderChapters();$("chapters").innerHTML+="<p>Matching chapter: "+found+"</p>"}
- else $("chapters").innerHTML="<p>No exact match in the sample catalogue. Try a subject name or browse the class subjects.</p>";
- $("resources").scrollIntoView({behavior:"smooth"});
+function renderTabs(){
+$("tabs").innerHTML="";
+["All Resources","Notes","Questions","Worksheets","MCQs","Revision","Mock Test"].forEach(t=>{
+let b=document.createElement("button");b.className="tab"+(t===tab?" active":"");b.textContent=t;b.onclick=()=>{tab=t;renderTabs();renderResources()};$("tabs").appendChild(b)});
 }
-buildClasses();buildSubjects();renderChapters();
+function renderResources(){
+const types=tab==="All Resources"?["Chapter Notes (PDF)","Important Questions (PDF)","Worksheet 1 (PDF)","MCQ Practice (PDF)"]:tab==="Mock Test"?["Chapter Mock Test","Practice Test"]:tab==="MCQs"?["MCQ Practice (PDF)"]:tab==="Questions"?["Important Questions","Extra Practice Questions"]:tab==="Worksheets"?["Worksheet 1 (PDF)","Worksheet 2 (PDF)"]:tab==="Revision"?["Quick Revision Guide","Key Concepts"]:["Chapter Notes","Summary Notes"];
+$("resourceList").innerHTML="";
+types.forEach((t,i)=>{
+let row=document.createElement("div");row.className="resource";
+row.innerHTML='<div class="fileicon">'+(i===0?"PDF":i===1?"DOC":"PDF")+'</div><div class="rinfo"><strong>'+t+'</strong><p>Class '+cls+' · '+subject+' · '+chapterNames()[chapter]+' · Preview resource</p></div><div class="actions"><button class="preview">◉ Preview</button><button class="download">↓ Open</button></div>';
+row.querySelector(".preview").onclick=()=>showNotice(t+" is a resource placeholder. Original study content must be added and verified before publication.");
+row.querySelector(".download").onclick=()=>window.open("https://ncert.nic.in/textbook.php","_blank","noopener");
+$("resourceList").appendChild(row)});
+}
+function showNotice(text){$("notice").textContent=text;$("notice").classList.remove("hidden")}
+function renderAll(){renderClasses();renderSubjects();renderChapters();renderTabs();renderResources()}
+function searchSite(){
+let q=$("search").value.trim().toLowerCase();if(!q)return;
+let found=false;
+for(let n=6;n<=12;n++){
+for(const s of subjects[n]){
+if(s[0].toLowerCase().includes(q)){cls=n;subject=s[0];chapter=0;found=true;break}}
+if(found)break}
+if(!found){
+for(let n=6;n<=12;n++){
+const list=mathChapters[n]||[];
+const i=list.findIndex(c=>c.toLowerCase().includes(q));
+if(i>=0){cls=n;subject="Mathematics";chapter=i;found=true;break}}
+}
+renderAll();if(!found)showNotice("No exact match found. Try a subject name or chapter title.");
+$("subjects").scrollIntoView({behavior:"smooth"});
+}
+renderAll();
 </script>
 </body>
 </html>
-
