@@ -2,13 +2,13 @@
   "CBSE Curriculum": {
     "url": "https://cbseacademic.nic.in/curriculum_2027.html",
     "status": 200,
-    "sha256": "be16bb67bdae718dc5f48b383fc5abd1ed9f855d0b838205242589b09efeb2ab",
-    "checked_at": "2026-11-16T03:13:22.676013+00:00"
+    "sha256": "90371008ddb66ae67263a47e1af3e08828b04a1511983d2ed3254afd01a588b5",
+    "checked_at": "2026-11-23T03:12:09.914360+00:00"
   },
   "CBSE Circulars": {
     "url": "https://cbseacademic.nic.in/circulars.html",
     "status": 200,
-    "sha256": "7c9ca4d46a785466f0f53a8f5bac0924dcf1234269a00118b0229b3064dd3e98",
-    "checked_at": "2026-11-16T03:13:24.209670+00:00"
+    "sha256": "4a840470d8f6f8ce329a2d0abe9a344fa653f7e8c99c68161c60364a88385d78",
+    "checked_at": "2026-11-23T03:12:11.658337+00:00"
   }
 }
